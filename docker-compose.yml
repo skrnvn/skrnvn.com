@@ -1,0 +1,12 @@
+version: "3.5"
+services:
+  nginx:
+    image: haos616/skrnvn
+    build: .
+    ports:
+      - 127.0.0.1:80:80
+    labels:
+    - traefik.backend=backend-iris
+    - traefik.frontend.rule=Host:skrnvn.com
+    - traefik.enable=true
+    - traefik.port=80
